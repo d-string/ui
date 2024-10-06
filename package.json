@@ -1,0 +1,28 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "dev:doc": "bun run dev --filter=docs",
+    "dev:ui": "bun run dev --filter=@acme/ui",
+    "build:ui": "bun run build --filter=@acme/ui",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build --filter=docs^... && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.9",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.8",
+    "turbo": "^2.1.3"
+  },
+  "name": "design-system",
+  "packageManager": "bun@1.1.29",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
