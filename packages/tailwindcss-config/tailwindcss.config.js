@@ -8,7 +8,6 @@ const tailwindConfig = {
       prop.addVariant("child-hover", "& > *:hover");
     },
   ],
-
   theme: {
     extend: {
       animation: {
@@ -49,7 +48,7 @@ const tailwindConfig = {
           950: "#1F122B",
         },
         error: {
-          main: "#110305",
+          DEFAULT: "#110305",
           50: "#F9DCDF",
           100: "#F3BAC0",
           200: "#ED97A1",
@@ -106,7 +105,7 @@ const tailwindConfig = {
         },
       },
       fontSize: {
-        xxs: "0.625rem",
+        xxs: ["0.625rem", "1rem"],
       },
       keyframes: {
         "accordion-down": {

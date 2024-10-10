@@ -22,19 +22,47 @@ type Story = StoryObj<typeof Button>;
  */
 export const Primary: Story = {
   render: (props) => (
-    <Button
-      {...props}
-      onClick={(): void => {
-        // eslint-disable-next-line no-alert -- alert for demo
-        alert("Hello from Turborepo!");
+    <div
+      style={{
+        display: "flex",
+        gap: "5px",
+        alignItems: "center",
       }}
     >
-      Hello
-    </Button>
+      <Button
+        {...props}
+        onClick={(): void => {
+          // eslint-disable-next-line no-alert -- alert for demo
+          alert("Hello from Turborepo!");
+        }}
+      >
+        Large
+      </Button>
+      <Button
+        {...props}
+        size="md"
+        onClick={(): void => {
+          // eslint-disable-next-line no-alert -- alert for demo
+          alert("Hello from Turborepo!");
+        }}
+      >
+        Medium
+      </Button>
+      <Button
+        {...props}
+        size="sm"
+        onClick={(): void => {
+          // eslint-disable-next-line no-alert -- alert for demo
+          alert("Hello from Turborepo!");
+        }}
+      >
+        Small
+      </Button>
+    </div>
   ),
   name: "Button",
   args: {
-    children: "Hello",
     type: "button",
+    disabled: false,
   },
 };
